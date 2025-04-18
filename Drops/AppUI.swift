@@ -416,9 +416,16 @@ struct AppUI: View {
         }
         .onChange(of: useMulticolor) { newValue in
             if newValue {
-                // Multicolor mode ON → force DotColor to black and disable InvertColor
                 dotColor = .black
                 invertColor = false
+            }
+
+            // Recheck parameter changes after a short delay
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                if hasParametersChanged() {
+                    print("🟣 DEBUG: Multicolor toggle triggered parameter change — triggering applyProcessing()")
+                    applyProcessing()
+                }
             }
         }
         .sheet(isPresented: Binding(
@@ -455,12 +462,9 @@ struct AppUI: View {
                 .transaction { $0.animation = nil }
                 .onChange(of: sheetPercentage) { newPercentage in
                     print("🟡 DEBUG: Sheet percentage changed: \(newPercentage * 100)%")
-
                     if newPercentage < 0.2 || sheetHeight < 100 {
                         print("🟡 DEBUG: Sheet pulled down - Checking parameter changes")
-
-                        // ✅ Force SwiftUI to recognize state updates
-                        DispatchQueue.main.async {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
                             if hasParametersChanged() {
                                 print("🟡 DEBUG: Parameters changed, triggering applyProcessing()")
                                 applyProcessing()
@@ -620,11 +624,11 @@ struct AppUI: View {
                          dotSizeFactor != lastAppliedDotSizeFactor ||
                          spacing != lastAppliedSpacing ||
                          intensityAcceleration != lastAppliedIntensityAcceleration ||
-                         dotColor != lastAppliedDotColor ||
+                         (!useMulticolor && dotColor != lastAppliedDotColor) ||
                          useGrayscale != lastAppliedUseGrayscale ||
                          gamma != lastAppliedGamma ||
                          useMulticolor != lastAppliedUseMulticolor ||
-                         framedExport != lastAppliedFramedExport ||
+                        // framedExport != lastAppliedFramedExport ||
                          invertColor != lastAppliedInvertColor
 
         
