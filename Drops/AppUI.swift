@@ -480,6 +480,15 @@ struct AppUI: View {
             .interactiveDismissDisabled(true)
             .presentationDragIndicator(.visible)
             .presentationCornerRadius(32)
+            .onDisappear {
+                print("🟢 DEBUG: Sheet onDisappear triggered — checking parameter changes")
+                if hasParametersChanged() {
+                    print("🟢 DEBUG: Changes detected on sheet disappear — triggering applyProcessing()")
+                    applyProcessing()
+                } else {
+                    print("🟢 DEBUG: No changes detected on sheet disappear.")
+                }
+            }
         }
         .sheet(isPresented: $isImagePickerPresented) {
             PHPickerViewControllerRepresentable(selectedImage: $selectedImage)
