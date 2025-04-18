@@ -49,7 +49,7 @@ struct DynamicSlider: View {
                     // ✅ Keep background the same for both states
                     Circle()
                         .fill(AppDesign.ComponentStates.dynamicParameterDefault.background) // ✅ Match default background
-                        .frame(width: 44, height: 44)
+                    .frame(width: isExpanded ? 44 : 44, height: isExpanded ? 44 : 44)
                         .shadow(color: AppDesign.ComponentStates.dynamicParameterDefault.shadow.color!,
                                 radius: AppDesign.ComponentStates.dynamicParameterDefault.shadow.radius) // ✅ Match default shadow
 
@@ -57,7 +57,7 @@ struct DynamicSlider: View {
                     ArcShape()
                         .trim(from: 0, to: progress) // ✅ Correct way to map progress to arc
                         .stroke(Color.white, lineWidth: 2) // ✅ Thin white arc
-                        .frame(width: 40, height: 40) // ✅ Slightly smaller than the circle
+                    .frame(width: isExpanded ? 40 : 40, height: isExpanded ? 40 : 40) // ✅ Slightly smaller than the circle
                         .rotationEffect(.degrees(0)) // ✅ Align with ArcSlider
 
                     // ✅ Icon in Default State, Numeric Value in Expanded State
@@ -66,7 +66,7 @@ struct DynamicSlider: View {
                             Text("\(Int(value))")
                                 .font(.headline)
                                 .foregroundColor(AppDesign.Colors.accent)
-                        } else if label == "Focus" || label == "Contrast" {
+                        } else if label == "Drops Size" || label == "Contrast" {
                             let fullValue = String(format: "%.2f", value)
                             let basePart = String(fullValue.prefix(3)) // e.g., "0.05"
                             let lastDigit = String(fullValue.suffix(1)) // e.g., "5"
@@ -95,7 +95,7 @@ struct DynamicSlider: View {
             }
             .zIndex(1)
         }
-       .frame(width: 64, height: 54)
+       .frame(width: isExpanded ? 64 : 64, height: isExpanded ? 54 : 54)
         
        .onChange(of: selectedSlider) { newValue in
            if newValue == nil { // ✅ Detect when exiting expanded state

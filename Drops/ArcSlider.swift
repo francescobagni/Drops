@@ -16,7 +16,8 @@ struct ArcSlider: View {
                     .shadow(color: AppDesign.ShadowStyles.slider.color!, radius: AppDesign.ShadowStyles.slider.radius)
 
                 // ✅ Add thin radial accent lines for steps
-                let totalSteps = Int((range.upperBound - range.lowerBound) / step)
+                let visualStep: CGFloat = max(step, 0.03)
+                let totalSteps = Int((range.upperBound - range.lowerBound) / visualStep)
                 ForEach(0...totalSteps, id: \.self) { i in
                     let fraction = CGFloat(i) / CGFloat(totalSteps)
                     let angleDeg = -90.0 + (180.0 * fraction)
