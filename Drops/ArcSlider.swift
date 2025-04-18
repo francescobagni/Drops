@@ -7,7 +7,7 @@ struct ArcSlider: View {
 
     var body: some View {
         GeometryReader { geometry in
-            let size: CGFloat = 300 // ✅ Maintain fixed size
+            let size = UIScreen.main.bounds.width * 1.1  // ✅ Maintain fixed size
 
             ZStack {
                 // ✅ Background ArcShape remains interactive
