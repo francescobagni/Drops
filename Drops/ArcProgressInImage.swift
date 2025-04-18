@@ -5,6 +5,7 @@ struct ArcProgressInImage: View {
     let progress: CGFloat       // 0.0 → 1.0
     let lineWidth: CGFloat
     let accentColor: Color
+    let neutral = Color(hex: "#000000") // Black
    // let neutralB = Color(hex: "#413E3E").opacity(0.45)
     
     // The displayed image's bounding rectangle (in parent coordinate space).
@@ -15,7 +16,7 @@ struct ArcProgressInImage: View {
         GeometryReader { geo in
             if let rect = boundingRect, rect.width > 0, rect.height > 0 {
                 // 1) The “valid rect” code
-                let diameter = rect.height * 5.75
+                let diameter = rect.height * 4.75
                 let radius   = diameter / 2.0
 
                 let topEdgeY = rect.origin.y
@@ -68,26 +69,26 @@ struct ArcProgressInImage: View {
                         .fontWeight(.regular)
                         .foregroundColor(accentColor.opacity(1.0))
                         .shadow(color: .black.opacity(1.00), radius: 12, x: 0, y: 0)
-                        .position(
-                            x: rect.origin.x + rect.width - 36,
-                            y: rect.origin.y + rect.height - 36
-                        )
                     */
                     ZStack {
                         Circle()
-                            .fill(Color.black.opacity(0.35))
-                            .frame(width: 54, height: 54)
-                            .blur(radius: 6)
+                           // .fill(.ultraThinMaterial)
+                            .fill(.white.opacity(1.00))
+                            .frame(width: 42, height: 42)
+                            .shadow(color: .black.opacity(0.25), radius: 16, x: 0, y: 1)
 
                         Text("\(Int(progress * 100))%")
-                            .font(.title2)
+                            .font(.body)
                             .fontWeight(.regular)
-                            .foregroundColor(accentColor.opacity(1.0))
-                            .shadow(color: .black.opacity(0.5), radius: 3, x: 0, y: 1)
+                           // .foregroundColor(accentColor.opacity(1.0))
+                            .foregroundColor(neutral)
+                           // .shadow(color: .black.opacity(0.5), radius: 3, x: 0, y: 1)
                     }
                     .position(
-                        x: rect.origin.x + rect.width - 36,
-                        y: rect.origin.y + rect.height - 36
+                       // x: rect.origin.x + rect.width - 36,
+                        x: geo.size.width - 44,
+                        // y: rect.origin.y + rect.height - 36
+                        y: rect.origin.y + rect.height / 2
                     )
 
             } else {
