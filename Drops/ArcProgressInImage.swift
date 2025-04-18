@@ -62,16 +62,33 @@ struct ArcProgressInImage: View {
                  Rectangle().path(in: rect)
                 )
 
-                ZStack {
+                    /*
                     Text("\(Int(progress * 100))%")
                         .font(.title2)
-                        .fontWeight(.semibold)
-                        .foregroundColor(accentColor.opacity(1.00))
+                        .fontWeight(.regular)
+                        .foregroundColor(accentColor.opacity(1.0))
+                        .shadow(color: .black.opacity(1.00), radius: 12, x: 0, y: 0)
                         .position(
                             x: rect.origin.x + rect.width - 36,
                             y: rect.origin.y + rect.height - 36
                         )
-                }
+                    */
+                    ZStack {
+                        Circle()
+                            .fill(Color.black.opacity(0.35))
+                            .frame(width: 54, height: 54)
+                            .blur(radius: 6)
+
+                        Text("\(Int(progress * 100))%")
+                            .font(.title2)
+                            .fontWeight(.regular)
+                            .foregroundColor(accentColor.opacity(1.0))
+                            .shadow(color: .black.opacity(0.5), radius: 3, x: 0, y: 1)
+                    }
+                    .position(
+                        x: rect.origin.x + rect.width - 36,
+                        y: rect.origin.y + rect.height - 36
+                    )
 
             } else {
                 // 2) The “fallback” code for when boundingRect is nil/invalid
