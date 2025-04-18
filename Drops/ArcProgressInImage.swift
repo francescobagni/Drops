@@ -41,19 +41,37 @@ struct ArcProgressInImage: View {
                         .frame(width: diameter, height: diameter)
                         .rotationEffect(.degrees(180))
 
+                    /*
                     Text("\(Int(progress * 100))%")
-                        .font(.largeTitle)
-                        
-                        .fontWeight(.light)
+                        .font(.title2)
+                        .fontWeight(.semibold)
                         .foregroundColor(accentColor.opacity(0.75))
-                        //.foregroundColor(neutralB)
-                        .offset(x: radius - 48)
-                        .offset(y: 32)
+                        .position(x: bottomRightX, y: bottomRightY)
+                        .zIndex(10)
+                    */
+                    let bottomRightX = rect.origin.x + rect.width - 48
+                    let bottomRightY = rect.origin.y + rect.height - 48
+
+                    Rectangle()
+                        .stroke(Color.red, lineWidth: 2)
+                        .frame(width: rect.width, height: rect.height)
+                        .position(x: rect.midX, y: rect.midY)
                 }
                 .position(x: centerX, y: centerY)
                 .clipShape(
-                    Rectangle().path(in: rect)
+                 Rectangle().path(in: rect)
                 )
+
+                ZStack {
+                    Text("\(Int(progress * 100))%")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(accentColor.opacity(1.00))
+                        .position(
+                            x: rect.origin.x + rect.width - 36,
+                            y: rect.origin.y + rect.height - 36
+                        )
+                }
 
             } else {
                 // 2) The “fallback” code for when boundingRect is nil/invalid
