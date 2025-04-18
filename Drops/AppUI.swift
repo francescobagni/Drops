@@ -201,11 +201,6 @@ struct AppUI: View {
                         .shadow(color: AppDesign.ComponentStates.dynamicParameterDefault.shadow.color!,
                                 radius: AppDesign.ComponentStates.dynamicParameterDefault.shadow.radius)
 
-                    Image(systemName: "info.circle")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 16, height: 16)
-                        .foregroundColor(AppDesign.Colors.accent)
                 }
                 .frame(maxWidth: .none)
                 .position(x: UIScreen.main.bounds.width / 2, y: 100)
