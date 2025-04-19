@@ -253,37 +253,34 @@ struct AppUI: View {
                                 .clipped()
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                                 .animation(nil, value: zoomState)
-                               .simultaneousGesture(
-                                    LongPressGesture(minimumDuration: 0.25)
-                                        .sequenced(before: DragGesture(minimumDistance: 0))
+                                .simultaneousGesture(
+                                    DragGesture(minimumDistance: 0)
                                         .onChanged { value in
-                                            switch value {
-                                            case .first(true):
-                                                break
-                                            case .second(true, let drag):
-                                                if let location = drag?.location {
-                                                    lensLocation = location
+                                            lensLocation = value.location
+                                            
+                                            if !isZoomed {
+                                                // Start the hold timer if not already holding
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.175) {
+                                                    if lensLocation == value.location { // still holding in same spot
+                                                        withAnimation(.easeIn(duration: 0.175)) {
+                                                            isZoomed = true
+                                                            showFingerLens = true
+                                                            isSheetPresented = false
+                                                            selectedSlider = nil
+                                                            hasTappedImageInFullscreen = true
+                                                            pulseHintVM.show = false
+                                                            lensScale = 1.0
+                                                        }
+                                                    }
                                                 }
-                                                hasTappedImageInFullscreen = true
-                                                pulseHintVM.show = false
-                                                withAnimation(.easeIn(duration: 0.5)) {
-                                                    isZoomed = true
-                                                    isSheetPresented = false
-                                                    selectedSlider = nil
-                                                    showFingerLens = true
-                                                    lensScale = 1.0
-                                                }
-                                            default:
-                                                break
                                             }
-                                            print("🟢 LongPress+Drag: lensLocation updated to \(lensLocation)")
                                         }
                                         .onEnded { _ in
                                             if isZoomed {
                                                 withAnimation(.easeInOut(duration: 0.2)) {
                                                     isZoomed = false
-                                                    isSheetPresented = true
                                                     showFingerLens = false
+                                                    isSheetPresented = true
                                                     lensScale = 0.0
                                                 }
                                             }
