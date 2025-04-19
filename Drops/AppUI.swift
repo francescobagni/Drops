@@ -33,6 +33,7 @@ struct AppUI: View {
     @State private var showFingerLens = false
     @State private var lensLocation: CGPoint = .zero
     @State private var lensScale: CGFloat = 0.0
+    @State private var fingerLensTimerID = UUID()
     
     @State private var lastAppliedMaxSize: Int = 1680
     @State private var lastAppliedLayers: Int = 4
@@ -255,36 +256,38 @@ struct AppUI: View {
                                 .animation(nil, value: zoomState)
                                 .simultaneousGesture(
                                     DragGesture(minimumDistance: 0)
-                                        .onChanged { value in
-                                            lensLocation = value.location
-                                            
-                                            if !isZoomed {
-                                                // Start the hold timer if not already holding
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.175) {
-                                                    if lensLocation == value.location { // still holding in same spot
-                                                        withAnimation(.easeIn(duration: 0.175)) {
-                                                            isZoomed = true
-                                                            showFingerLens = true
-                                                            isSheetPresented = false
-                                                            selectedSlider = nil
-                                                            hasTappedImageInFullscreen = true
-                                                            pulseHintVM.show = false
-                                                            lensScale = 1.0
-                                                        }
-                                                    }
+                                .onChanged { value in
+                                    lensLocation = value.location
+                                    let thisGestureID = UUID()
+                                    fingerLensTimerID = thisGestureID
+                                    
+                                    if !isZoomed {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.175) {
+                                            if fingerLensTimerID == thisGestureID && lensLocation == value.location {
+                                                withAnimation(.easeIn(duration: 0.175)) {
+                                                    isZoomed = true
+                                                    showFingerLens = true
+                                                    isSheetPresented = false
+                                                    selectedSlider = nil
+                                                    hasTappedImageInFullscreen = true
+                                                    pulseHintVM.show = false
+                                                    lensScale = 1.0
                                                 }
                                             }
                                         }
-                                        .onEnded { _ in
-                                            if isZoomed {
-                                                withAnimation(.easeInOut(duration: 0.2)) {
-                                                    isZoomed = false
-                                                    showFingerLens = false
-                                                    isSheetPresented = true
-                                                    lensScale = 0.0
-                                                }
-                                            }
+                                    }
+                                }
+                                .onEnded { _ in
+                                    fingerLensTimerID = UUID()
+                                    if isZoomed {
+                                        withAnimation(.easeInOut(duration: 0.2)) {
+                                            isZoomed = false
+                                            showFingerLens = false
+                                            isSheetPresented = true
+                                            lensScale = 0.0
                                         }
+                                    }
+                                }
                                 )
                                 .simultaneousGesture(
                                     TapGesture()
