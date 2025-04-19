@@ -32,7 +32,6 @@ struct AppUI: View {
   //  @State private var pulseAnimationID = UUID()
     @State private var showFingerLens = false
     @State private var lensLocation: CGPoint = .zero
-    @State private var isHolding = false
     @State private var lensScale: CGFloat = 0.0
     
     @State private var lastAppliedMaxSize: Int = 1680
@@ -254,30 +253,32 @@ struct AppUI: View {
                                 .clipped()
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                                 .animation(nil, value: zoomState)
-                                .gesture(
-                                    LongPressGesture(minimumDuration: 0.5)
-                                        .onChanged { _ in
-                                            if !isZoomed && !isHolding {
-                                                isHolding = true
-                                                lensScale = 0.0
+                               .simultaneousGesture(
+                                    LongPressGesture(minimumDuration: 0.25)
+                                        .sequenced(before: DragGesture(minimumDistance: 0))
+                                        .onChanged { value in
+                                            switch value {
+                                            case .first(true):
+                                                break
+                                            case .second(true, let drag):
+                                                if let location = drag?.location {
+                                                    lensLocation = location
+                                                }
+                                                hasTappedImageInFullscreen = true
+                                                pulseHintVM.show = false
                                                 withAnimation(.easeIn(duration: 0.5)) {
+                                                    isZoomed = true
+                                                    isSheetPresented = false
+                                                    selectedSlider = nil
+                                                    showFingerLens = true
                                                     lensScale = 1.0
                                                 }
-
-                                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-                                                    if isHolding {
-                                                        withAnimation(.easeIn(duration: 0.5)) {
-                                                            isZoomed = true
-                                                            isSheetPresented = false
-                                                            selectedSlider = nil
-                                                            showFingerLens = true
-                                                        }
-                                                    }
-                                                }
+                                            default:
+                                                break
                                             }
+                                            print("🟢 LongPress+Drag: lensLocation updated to \(lensLocation)")
                                         }
                                         .onEnded { _ in
-                                            isHolding = false
                                             if isZoomed {
                                                 withAnimation(.easeInOut(duration: 0.2)) {
                                                     isZoomed = false
