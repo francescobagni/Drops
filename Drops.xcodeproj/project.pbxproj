@@ -21,7 +21,6 @@
 		135622702DA875CA00C9255C /* RegionHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356225D2DA875CA00C9255C /* RegionHighlight.swift */; };
 		135622712DA875CA00C9255C /* UI_v1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135622612DA875CA00C9255C /* UI_v1.swift */; };
 		135622722DA875CA00C9255C /* SheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135622602DA875CA00C9255C /* SheetController.swift */; };
-		135622732DA875CA00C9255C /* Next Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135622562DA875CA00C9255C /* Next Task.swift */; };
 		135622742DA875CA00C9255C /* RegionSubdivision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356225F2DA875CA00C9255C /* RegionSubdivision.swift */; };
 		135622752DA875CA00C9255C /* DynamicSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356224D2DA875CA00C9255C /* DynamicSlider.swift */; };
 		135622762DA875CA00C9255C /* PulseHint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356225A2DA875CA00C9255C /* PulseHint.swift */; };
@@ -88,7 +87,6 @@
 		135622532DA875CA00C9255C /* LocalContrast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalContrast.swift; sourceTree = "<group>"; };
 		135622542DA875CA00C9255C /* LocalIntensity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalIntensity.swift; sourceTree = "<group>"; };
 		135622552DA875CA00C9255C /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
-		135622562DA875CA00C9255C /* Next Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Next Task.swift"; sourceTree = "<group>"; };
 		135622572DA875CA00C9255C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		135622582DA875CA00C9255C /* PosterizationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterizationMethod.swift; sourceTree = "<group>"; };
 		135622592DA875CA00C9255C /* ProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 				135622532DA875CA00C9255C /* LocalContrast.swift */,
 				135622542DA875CA00C9255C /* LocalIntensity.swift */,
 				135622552DA875CA00C9255C /* Manager.swift */,
-				135622562DA875CA00C9255C /* Next Task.swift */,
 				135622572DA875CA00C9255C /* Persistence.swift */,
 				135622582DA875CA00C9255C /* PosterizationMethod.swift */,
 				135622592DA875CA00C9255C /* ProgressIndicator.swift */,
@@ -373,7 +370,6 @@
 				135622702DA875CA00C9255C /* RegionHighlight.swift in Sources */,
 				135622712DA875CA00C9255C /* UI_v1.swift in Sources */,
 				135622722DA875CA00C9255C /* SheetController.swift in Sources */,
-				135622732DA875CA00C9255C /* Next Task.swift in Sources */,
 				135622742DA875CA00C9255C /* RegionSubdivision.swift in Sources */,
 				135622752DA875CA00C9255C /* DynamicSlider.swift in Sources */,
 				135622762DA875CA00C9255C /* PulseHint.swift in Sources */,

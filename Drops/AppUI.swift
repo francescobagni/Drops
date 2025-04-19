@@ -347,9 +347,10 @@ struct AppUI: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else {
                     CenterImageSelectionCTA {
-                        // Move the same toggle logic here
-                        isImagePickerPresented.toggle()
+                        print("🟢 DEBUG: Center CTA tapped (fallback)")
+                        openImagePicker()
                     }
+                    .contentShape(Rectangle()) // Expand tappable area
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 }
             }
