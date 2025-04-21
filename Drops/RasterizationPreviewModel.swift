@@ -9,11 +9,14 @@ class RasterizationPreviewModel: ObservableObject {
     private let rasterizer = CircleRasterization()
     private let regionManager = RegionManager()
     
+    private var cachedIntensityMap: [[CGFloat]]?
+    private var cachedMapKey: String?
+    
     
     func processImage(
         _ inputImage: UIImage, maxSize: Int, layerCount: Int, clusterSize: Int, spacing: CGFloat,
         intensityAcceleration: CGFloat, colorAcceleration: CGFloat, dotSizeFactor: CGFloat,
-        dotColor: UIColor, contrastThreshold: CGFloat, useGrayscale: Bool, useMulticolor: Bool, gammaValue: CGFloat, progressMessage: Binding<String>, completion: @escaping () -> Void, // NEW: define a closure that takes a Double
+        dotColor: UIColor, contrastThreshold: CGFloat, useGrayscale: Bool, useMulticolor: Bool, gammaValue: CGFloat, invertColor: Bool, progressMessage: Binding<String>, completion: @escaping () -> Void, // NEW: define a closure that takes a Double
         progressCallback: @escaping (Double) -> Void
     ) {
         DispatchQueue.global(qos: .userInitiated).async {
@@ -58,11 +61,24 @@ class RasterizationPreviewModel: ObservableObject {
             print("✅ Image processing successful! Using processed image.")
             self.extractedRegions = [finalImage]
 
+            let mapKey = "\(inputImage.hashValue)-\(useMulticolor)-\(useGrayscale)-\(invertColor)-\(maxSize)"
+            
+            if self.cachedMapKey != mapKey {
+                print("🧠 Caching new intensity map for key:", mapKey)
+                self.cachedIntensityMap = LocalIntensity.precomputeIntensityMap(
+                    for: finalImage.cgImage!,
+                    contrastThreshold: contrastThreshold
+                )
+                self.cachedMapKey = mapKey
+            } else {
+                print("✅ Using cached intensity map for key:", mapKey)
+            }
+
             // 🔹 Step 3: Rasterization
             guard let rasterizedImage = self.applyRasterization(
                 using: self.extractedRegions,
                 contrastMap: nil,
-                intensityMap: nil,
+                intensityMap: self.cachedIntensityMap,
                 clusterSize: clusterSize,
                 spacing: spacing,
                 intensityAcceleration: intensityAcceleration,

@@ -535,6 +535,7 @@ struct AppUI: View {
             useGrayscale: useGrayscale,
             useMulticolor: useMulticolor,
             gammaValue: gamma,
+            invertColor: invertColor,
             progressMessage: $progressMessage,
             completion: {
                 DispatchQueue.main.async {
