@@ -520,7 +520,7 @@ struct AppUI: View {
 
         progressMessage = "Processing image..."
         isSheetPresented = true
-
+        let processingStartTime = CFAbsoluteTimeGetCurrent()
         viewModel.processImage(
             image,
             maxSize: maxSize,
@@ -554,6 +554,9 @@ struct AppUI: View {
                     lastAppliedUseMulticolor = useMulticolor
                     lastAppliedInvertColor = invertColor
                 }
+                let processingEndTime = CFAbsoluteTimeGetCurrent()
+                let duration = processingEndTime - processingStartTime
+                print("⏱️ Total processing time: \(String(format: "%.2f", duration)) seconds")
                 print("🔵 [DEBUG] fingerLensPulseShown =", fingerLensPulseShown)
                 if fingerLensPulseShown == false {
                     fingerLensPulseShown = true // or remove it, if you want indefinite pulses every time
