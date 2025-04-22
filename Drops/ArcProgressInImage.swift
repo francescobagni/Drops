@@ -1,4 +1,3 @@
-// ArcProgressInImage.swift
 import SwiftUI
 
 struct ArcProgressInImage: View {
@@ -11,6 +10,18 @@ struct ArcProgressInImage: View {
     // The displayed image's bounding rectangle (in parent coordinate space).
     // If nil or zero-sized, we fallback to a generic center position.
     let boundingRect: CGRect?
+    
+    private func topPadding(for rect: CGRect) -> CGFloat {
+        let aspectRatio = rect.width / rect.height
+        switch aspectRatio {
+        case 1.7...1.9: return 144  // landscape 16:9
+        case 1.3...1.6: return 114  // landscape 4:3 tested
+        case 0.9...1.1: return 144  // square tested
+        case 0.7...0.89: return 94 // portrait 4:3 tested
+        case 0.5...0.69: return 84 // portrait 16:9 tested
+        default: return 94
+        }
+    }
 
     var body: some View {
         GeometryReader { geo in
@@ -29,6 +40,11 @@ struct ArcProgressInImage: View {
                 //    so circle center = that right edge - radius
                 let rightEdgeX = minX + clamped * (maxX - minX)
                 let centerX    = rightEdgeX - radius
+
+                let topPadding = topPadding(for: rect)
+
+                let bottomRightX = rect.origin.x + rect.width - 48
+                let bottomRightY = rect.origin.y + rect.height - 48
 
                 ZStack {
                     Circle()
@@ -50,8 +66,6 @@ struct ArcProgressInImage: View {
                         .position(x: bottomRightX, y: bottomRightY)
                         .zIndex(10)
                     */
-                    let bottomRightX = rect.origin.x + rect.width - 48
-                    let bottomRightY = rect.origin.y + rect.height - 48
 
                     Rectangle()
                         .stroke(Color.red, lineWidth: 2)
@@ -70,41 +84,38 @@ struct ArcProgressInImage: View {
                         .foregroundColor(accentColor.opacity(1.0))
                         .shadow(color: .black.opacity(1.00), radius: 12, x: 0, y: 0)
                     */
-                    ZStack {
-                        Circle()
-                           // .fill(.ultraThinMaterial)
-                           // .fill(.white.opacity(1.00))
-                            .fill(neutral.opacity(0.30))
-                            .frame(width: 42, height: 42)
-                            .shadow(color: .black.opacity(0.25), radius: 16, x: 0, y: 1)
+                GeometryReader { innerGeo in
+                    ZStack(alignment: .topLeading) {
+                        HStack(spacing: 0) {
+                           // Text("\(Int(progress * 100) / 100)") // hundreds digit
+                             //   .frame(width: 24, alignment: .trailing)
 
-                      /*   Text("\(Int(progress * 100))%")
-                            .font(.body)
-                            .fontWeight(.medium)
-                           // .foregroundColor(accentColor.opacity(1.0))
-                            .foregroundColor(.white)
-                           // .foregroundColor(neutral)
-                           // .shadow(color: .black.opacity(0.5), radius: 3, x: 0, y: 1)  */
-                        
-                        HStack(alignment: .top, spacing: 1) {
-                            Text("\(Int(progress * 100))")
-                                .font(.body)
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
+                            Text("\(Int(progress * 100) / 10 % 10)") // tens digit
+                                .frame(width: 26, alignment: .trailing)
+                                .font(.system(size: 48, weight: .thin, design: .rounded))
+
+                            Text("\(Int(progress * 100) % 10)") // units digit
+                                .frame(width: 26, alignment: .trailing)
+                                .font(.system(size: 48, weight: .thin, design: .rounded))
+
                             Text("%")
-                                .font(.system(size: 10))
-                                .baselineOffset(6)
-                                .foregroundColor(.white)
+                                .frame(width: 26, alignment: .trailing)
+                                .baselineOffset(12)
+                                .font(.system(size: 28, weight: .thin, design: .rounded))
                         }
-                        
-                        
+                       // .font(.system(size: 48, weight: .thin, design: .rounded))
+                        .foregroundColor(.white.opacity(1.0))
+                        .shadow(color: .black.opacity(0.25), radius: 4, x: 0, y: 0)
+                        .shadow(color: .black.opacity(0.35), radius: 16, x: 0, y: 6)
+                        .shadow(color: .black.opacity(0.25), radius: 32, x: 0, y: 6)
+                        .fixedSize()
+                        .padding(.top, topPadding)
+                        .padding(.leading, 20)
                     }
-                    .position(
-                       // x: rect.origin.x + rect.width - 36,
-                        x: geo.size.width - 44,
-                        // y: rect.origin.y + rect.height - 36
-                        y: rect.origin.y + rect.height / 2
-                    )
+                    .frame(width: innerGeo.size.width, height: innerGeo.size.height, alignment: .topLeading)
+                }
+                .frame(width: rect.width, height: rect.height)
+               // .position(x: rect.midX, y: rect.midY)
 
             } else {
                 // 2) The “fallback” code for when boundingRect is nil/invalid

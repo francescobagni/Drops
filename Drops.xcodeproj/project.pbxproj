@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13013C842DB7F2DC006A88D7 /* ArcProgressImage_safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13013C832DB7F2D7006A88D7 /* ArcProgressImage_safe.swift */; };
 		135622652DA875CA00C9255C /* ImageInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135622512DA875CA00C9255C /* ImageInput.swift */; };
 		135622662DA875CA00C9255C /* ArcProgressInImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135622432DA875CA00C9255C /* ArcProgressInImage.swift */; };
 		135622672DA875CA00C9255C /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135622552DA875CA00C9255C /* Manager.swift */; };
@@ -20,7 +19,6 @@
 		1356226E2DA875CA00C9255C /* RasterizationPreviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356225C2DA875CA00C9255C /* RasterizationPreviewModel.swift */; };
 		1356226F2DA875CA00C9255C /* PosterizationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135622582DA875CA00C9255C /* PosterizationMethod.swift */; };
 		135622702DA875CA00C9255C /* RegionHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356225D2DA875CA00C9255C /* RegionHighlight.swift */; };
-		135622712DA875CA00C9255C /* UI_v1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135622612DA875CA00C9255C /* UI_v1.swift */; };
 		135622722DA875CA00C9255C /* SheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135622602DA875CA00C9255C /* SheetController.swift */; };
 		135622742DA875CA00C9255C /* RegionSubdivision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356225F2DA875CA00C9255C /* RegionSubdivision.swift */; };
 		135622752DA875CA00C9255C /* DynamicSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356224D2DA875CA00C9255C /* DynamicSlider.swift */; };
@@ -33,7 +31,6 @@
 		1356227C2DA875CA00C9255C /* GoldenRatioFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356224F2DA875CA00C9255C /* GoldenRatioFrame.swift */; };
 		1356227D2DA875CA00C9255C /* ArcSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135622442DA875CA00C9255C /* ArcSlider.swift */; };
 		1356227E2DA875CA00C9255C /* Documentation_B.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135622492DA875CA00C9255C /* Documentation_B.swift */; };
-		1356227F2DA875CA00C9255C /* RasterizationPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356225B2DA875CA00C9255C /* RasterizationPreview.swift */; };
 		135622812DA875CA00C9255C /* CircleRasterization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135622462DA875CA00C9255C /* CircleRasterization.swift */; };
 		135622822DA875CA00C9255C /* ColorAcceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135622472DA875CA00C9255C /* ColorAcceleration.swift */; };
 		135622832DA875CA00C9255C /* DropsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356224C2DA875CA00C9255C /* DropsApp.swift */; };
@@ -68,7 +65,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		13013C832DB7F2D7006A88D7 /* ArcProgressImage_safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcProgressImage_safe.swift; sourceTree = "<group>"; };
 		1356223F2DA875CA00C9255C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		135622412DA875CA00C9255C /* AppDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDesign.swift; sourceTree = "<group>"; };
 		135622422DA875CA00C9255C /* AppUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUI.swift; sourceTree = "<group>"; };
@@ -94,13 +90,11 @@
 		135622582DA875CA00C9255C /* PosterizationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterizationMethod.swift; sourceTree = "<group>"; };
 		135622592DA875CA00C9255C /* ProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
 		1356225A2DA875CA00C9255C /* PulseHint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseHint.swift; sourceTree = "<group>"; };
-		1356225B2DA875CA00C9255C /* RasterizationPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RasterizationPreview.swift; sourceTree = "<group>"; };
 		1356225C2DA875CA00C9255C /* RasterizationPreviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RasterizationPreviewModel.swift; sourceTree = "<group>"; };
 		1356225D2DA875CA00C9255C /* RegionHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionHighlight.swift; sourceTree = "<group>"; };
 		1356225E2DA875CA00C9255C /* RegionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionManager.swift; sourceTree = "<group>"; };
 		1356225F2DA875CA00C9255C /* RegionSubdivision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionSubdivision.swift; sourceTree = "<group>"; };
 		135622602DA875CA00C9255C /* SheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetController.swift; sourceTree = "<group>"; };
-		135622612DA875CA00C9255C /* UI_v1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_v1.swift; sourceTree = "<group>"; };
 		135622622DA875CA00C9255C /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		135FC0942DB6F25000E5A2F2 /* LaunchScreen2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen2.storyboard; sourceTree = "<group>"; };
 		13EA25EC2D13485E008E414E /* Drops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drops.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,7 +146,6 @@
 				135622412DA875CA00C9255C /* AppDesign.swift */,
 				135622422DA875CA00C9255C /* AppUI.swift */,
 				135622432DA875CA00C9255C /* ArcProgressInImage.swift */,
-				13013C832DB7F2D7006A88D7 /* ArcProgressImage_safe.swift */,
 				135622442DA875CA00C9255C /* ArcSlider.swift */,
 				135622452DA875CA00C9255C /* Assets.xcassets */,
 				135622462DA875CA00C9255C /* CircleRasterization.swift */,
@@ -174,13 +167,11 @@
 				135622582DA875CA00C9255C /* PosterizationMethod.swift */,
 				135622592DA875CA00C9255C /* ProgressIndicator.swift */,
 				1356225A2DA875CA00C9255C /* PulseHint.swift */,
-				1356225B2DA875CA00C9255C /* RasterizationPreview.swift */,
 				1356225C2DA875CA00C9255C /* RasterizationPreviewModel.swift */,
 				1356225D2DA875CA00C9255C /* RegionHighlight.swift */,
 				1356225E2DA875CA00C9255C /* RegionManager.swift */,
 				1356225F2DA875CA00C9255C /* RegionSubdivision.swift */,
 				135622602DA875CA00C9255C /* SheetController.swift */,
-				135622612DA875CA00C9255C /* UI_v1.swift */,
 				135622622DA875CA00C9255C /* UIImageExtensions.swift */,
 				13F4A26D2DA93B7000E23F0E /* Info.plist */,
 				135FC0942DB6F25000E5A2F2 /* LaunchScreen2.storyboard */,
@@ -367,7 +358,6 @@
 			files = (
 				135622652DA875CA00C9255C /* ImageInput.swift in Sources */,
 				135622662DA875CA00C9255C /* ArcProgressInImage.swift in Sources */,
-				13013C842DB7F2DC006A88D7 /* ArcProgressImage_safe.swift in Sources */,
 				135622672DA875CA00C9255C /* Manager.swift in Sources */,
 				135622682DA875CA00C9255C /* AppDesign.swift in Sources */,
 				135622692DA875CA00C9255C /* Documentation_A.swift in Sources */,
@@ -378,7 +368,6 @@
 				1356226E2DA875CA00C9255C /* RasterizationPreviewModel.swift in Sources */,
 				1356226F2DA875CA00C9255C /* PosterizationMethod.swift in Sources */,
 				135622702DA875CA00C9255C /* RegionHighlight.swift in Sources */,
-				135622712DA875CA00C9255C /* UI_v1.swift in Sources */,
 				135622722DA875CA00C9255C /* SheetController.swift in Sources */,
 				135622742DA875CA00C9255C /* RegionSubdivision.swift in Sources */,
 				135622752DA875CA00C9255C /* DynamicSlider.swift in Sources */,
@@ -391,7 +380,6 @@
 				1356227C2DA875CA00C9255C /* GoldenRatioFrame.swift in Sources */,
 				1356227D2DA875CA00C9255C /* ArcSlider.swift in Sources */,
 				1356227E2DA875CA00C9255C /* Documentation_B.swift in Sources */,
-				1356227F2DA875CA00C9255C /* RasterizationPreview.swift in Sources */,
 				135622812DA875CA00C9255C /* CircleRasterization.swift in Sources */,
 				135622822DA875CA00C9255C /* ColorAcceleration.swift in Sources */,
 				135622832DA875CA00C9255C /* DropsApp.swift in Sources */,

@@ -17,7 +17,7 @@ struct AppUI: View {
     @State private var maxSize: Int = 1800
     @State private var layers: Int = 4
     @State private var clusterSize: Int = 14
-    @State private var dotSizeFactor: CGFloat = 0.5
+    @State private var dotSizeFactor: CGFloat = 0.75
     @State private var spacing: CGFloat = 5.0
     @State private var intensityAcceleration: CGFloat = 1.0
     @State private var dotColor: Color = .black
@@ -48,7 +48,7 @@ struct AppUI: View {
     @State private var lastAppliedFramedExport: Bool = false
     @State private var lastAppliedInvertColor: Bool = false
     
-    @State private var useMulticolor: Bool = true
+    @State private var useMulticolor: Bool = false
     @State private var framedExport: Bool = false
     @State private var invertColor: Bool = false
     @StateObject private var pulseHintVM = PulseHintViewModel()
