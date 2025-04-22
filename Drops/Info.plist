@@ -5,8 +5,6 @@
 	<key>NSFileProviderPresenceUsageDescription
 </key>
 	<string>This app may access Files to save images.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>This app may save processed images to your photo library.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -14,17 +12,9 @@
 		<key>UISceneConfigurations</key>
 		<dict/>
 	</dict>
-	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app requires access to your photo library to select images.</string>
-	<key>UILaunchStoryboardName</key>
+	<key>UILaunchStoryboardName
+UILaunchStoryboardName
+UILaunchStoryboardName</key>
 	<string>LaunchScreen2</string>
-	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-	<key>CFBundleName</key>
-	<string>Drops</string>
 </dict>
 </plist>

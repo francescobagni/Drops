@@ -563,7 +563,7 @@ struct AppUI: View {
                     fingerLensPulseShown = true // or remove it, if you want indefinite pulses every time
                     print("🟣 [DEBUG] Scheduling repeated PulseHint...")
                 // The first pulse after 2 seconds
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                         if self.canShowPulseHint {
                             print("🟣 [DEBUG] Triggering PulseHint after delay")
                             self.pulseHintVM.shouldPulse = false // always reset first

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13013C842DB7F2DC006A88D7 /* ArcProgressImage_safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13013C832DB7F2D7006A88D7 /* ArcProgressImage_safe.swift */; };
 		135622652DA875CA00C9255C /* ImageInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135622512DA875CA00C9255C /* ImageInput.swift */; };
 		135622662DA875CA00C9255C /* ArcProgressInImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135622432DA875CA00C9255C /* ArcProgressInImage.swift */; };
 		135622672DA875CA00C9255C /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135622552DA875CA00C9255C /* Manager.swift */; };
@@ -40,6 +41,7 @@
 		135622852DA875CA00C9255C /* Documentation_D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356224B2DA875CA00C9255C /* Documentation_D.swift */; };
 		135622862DA875CA00C9255C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1356223F2DA875CA00C9255C /* Preview Assets.xcassets */; };
 		135622872DA875CA00C9255C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 135622452DA875CA00C9255C /* Assets.xcassets */; };
+		135FC0952DB6F25000E5A2F2 /* LaunchScreen2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 135FC0942DB6F25000E5A2F2 /* LaunchScreen2.storyboard */; };
 		13F4A2672DA9395F00E23F0E /* App_ETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F4A2622DA9395F00E23F0E /* App_ETests.swift */; };
 		13F4A2682DA9395F00E23F0E /* App_EUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F4A2642DA9395F00E23F0E /* App_EUITests.swift */; };
 		13F4A2692DA9395F00E23F0E /* App_EUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F4A2652DA9395F00E23F0E /* App_EUITestsLaunchTests.swift */; };
@@ -66,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13013C832DB7F2D7006A88D7 /* ArcProgressImage_safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcProgressImage_safe.swift; sourceTree = "<group>"; };
 		1356223F2DA875CA00C9255C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		135622412DA875CA00C9255C /* AppDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDesign.swift; sourceTree = "<group>"; };
 		135622422DA875CA00C9255C /* AppUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUI.swift; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 		135622602DA875CA00C9255C /* SheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetController.swift; sourceTree = "<group>"; };
 		135622612DA875CA00C9255C /* UI_v1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_v1.swift; sourceTree = "<group>"; };
 		135622622DA875CA00C9255C /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		135FC0942DB6F25000E5A2F2 /* LaunchScreen2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen2.storyboard; sourceTree = "<group>"; };
 		13EA25EC2D13485E008E414E /* Drops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13EA26012D134860008E414E /* DropsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DropsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13EA260B2D134860008E414E /* DropsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DropsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +152,7 @@
 				135622412DA875CA00C9255C /* AppDesign.swift */,
 				135622422DA875CA00C9255C /* AppUI.swift */,
 				135622432DA875CA00C9255C /* ArcProgressInImage.swift */,
+				13013C832DB7F2D7006A88D7 /* ArcProgressImage_safe.swift */,
 				135622442DA875CA00C9255C /* ArcSlider.swift */,
 				135622452DA875CA00C9255C /* Assets.xcassets */,
 				135622462DA875CA00C9255C /* CircleRasterization.swift */,
@@ -178,6 +183,7 @@
 				135622612DA875CA00C9255C /* UI_v1.swift */,
 				135622622DA875CA00C9255C /* UIImageExtensions.swift */,
 				13F4A26D2DA93B7000E23F0E /* Info.plist */,
+				135FC0942DB6F25000E5A2F2 /* LaunchScreen2.storyboard */,
 			);
 			path = Drops;
 			sourceTree = "<group>";
@@ -313,6 +319,8 @@
 			);
 			mainGroup = 13EA25E32D13485E008E414E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 13EA25ED2D13485E008E414E /* Products */;
 			projectDirPath = "";
@@ -332,6 +340,7 @@
 			files = (
 				135622862DA875CA00C9255C /* Preview Assets.xcassets in Resources */,
 				135622872DA875CA00C9255C /* Assets.xcassets in Resources */,
+				135FC0952DB6F25000E5A2F2 /* LaunchScreen2.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +367,7 @@
 			files = (
 				135622652DA875CA00C9255C /* ImageInput.swift in Sources */,
 				135622662DA875CA00C9255C /* ArcProgressInImage.swift in Sources */,
+				13013C842DB7F2DC006A88D7 /* ArcProgressImage_safe.swift in Sources */,
 				135622672DA875CA00C9255C /* Manager.swift in Sources */,
 				135622682DA875CA00C9255C /* AppDesign.swift in Sources */,
 				135622692DA875CA00C9255C /* Documentation_A.swift in Sources */,
@@ -541,6 +551,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "-DSCREENRECORDING";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
@@ -560,9 +571,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Drops/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Drops;
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to your photo library to select images.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app may save processed images to your photo library.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to your photo library to select images.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen2;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -572,6 +582,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = Fra.Drops;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -593,9 +604,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Drops/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Drops;
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to your photo library to select images.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app may save processed images to your photo library.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to your photo library to select images.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen2;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -605,6 +615,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = Fra.Drops;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -73,16 +73,31 @@ struct ArcProgressInImage: View {
                     ZStack {
                         Circle()
                            // .fill(.ultraThinMaterial)
-                            .fill(.white.opacity(1.00))
+                           // .fill(.white.opacity(1.00))
+                            .fill(neutral.opacity(0.30))
                             .frame(width: 42, height: 42)
                             .shadow(color: .black.opacity(0.25), radius: 16, x: 0, y: 1)
 
-                        Text("\(Int(progress * 100))%")
+                      /*   Text("\(Int(progress * 100))%")
                             .font(.body)
-                            .fontWeight(.regular)
+                            .fontWeight(.medium)
                            // .foregroundColor(accentColor.opacity(1.0))
-                            .foregroundColor(neutral)
-                           // .shadow(color: .black.opacity(0.5), radius: 3, x: 0, y: 1)
+                            .foregroundColor(.white)
+                           // .foregroundColor(neutral)
+                           // .shadow(color: .black.opacity(0.5), radius: 3, x: 0, y: 1)  */
+                        
+                        HStack(alignment: .top, spacing: 1) {
+                            Text("\(Int(progress * 100))")
+                                .font(.body)
+                                .fontWeight(.medium)
+                                .foregroundColor(.white)
+                            Text("%")
+                                .font(.system(size: 10))
+                                .baselineOffset(6)
+                                .foregroundColor(.white)
+                        }
+                        
+                        
                     }
                     .position(
                        // x: rect.origin.x + rect.width - 36,
