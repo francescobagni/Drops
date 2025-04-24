@@ -48,7 +48,7 @@ struct AppUI: View {
     @State private var lastAppliedFramedExport: Bool = false
     @State private var lastAppliedInvertColor: Bool = false
     
-    @State private var useMulticolor: Bool = false
+    @State private var useMulticolor: Bool = true
     @State private var framedExport: Bool = false
     @State private var invertColor: Bool = false
     @StateObject private var pulseHintVM = PulseHintViewModel()
