@@ -25,7 +25,7 @@ struct ArcProgressInImage: View {
             case 1.7...1.9: return 144  // landscape 16:9
             case 1.3...1.6: return 154  // landscape 4:3 tested
             case 0.9...1.1: return 144  // square
-            case 0.7...0.89: return 144 // portrait 4:3 tested
+            case 0.7...0.89: return 134 // portrait 4:3 tested
             case 0.5...0.69: return 84 // portrait 16:9 tested
             default: return 94
         }

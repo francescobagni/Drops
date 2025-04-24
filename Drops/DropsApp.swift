@@ -64,11 +64,14 @@ struct DropsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TouchOverlayContainer {
+          /*  TouchOverlayContainer {
                 AppUI()
                     .environmentObject(persistenceController)
                     .preferredColorScheme(.dark)
-            }
+            } */
+            AppUI()
+                .environmentObject(persistenceController)
+                .preferredColorScheme(.dark)
         }
     }
 }
