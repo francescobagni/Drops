@@ -696,8 +696,8 @@ struct AppUI: View {
     private func sliderRange(for label: String) -> ClosedRange<CGFloat> {
         switch label {
         case "Shadow": return 0.5...3.0
-        case "Drops Size": return 0.05...2.0
-        case "Contrast": return 0.5...2.0
+        case "Drops Size": return 0.05...10.0
+        case "Contrast": return 0.5...5.0
         case "Layers": return 2...20
         default: return 0...1
         }

@@ -171,7 +171,7 @@ struct CustomSheetContent: View {
                                 .font(.subheadline)
                                 .foregroundColor(AppDesign.Colors.accent2)
                             Picker("", selection: $maxSize) {
-                                ForEach([1280, 1440, 1680, 1800, 1920, 2400, 2880, 3360], id: \.self) { value in
+                                ForEach([800, 1280, 1440, 1680, 1800, 1920, 2400, 2880, 3360], id: \.self) { value in
                                     Text("\(value)")
                                         .foregroundColor(AppDesign.Colors.accent) // ✅ Override iOS accent color
                                         .tag(value)
