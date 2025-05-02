@@ -89,6 +89,8 @@ struct CustomSheetContent: View {
     @Binding var framedExport: Bool // New state variable for Framed Export
     @Binding var invertColor: Bool // Added binding for invertColor
     
+    @State private var isGrainPickerExpanded: Bool = false
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -186,24 +188,51 @@ struct CustomSheetContent: View {
                         .cornerRadius(10)
                         .transaction { $0.animation = nil }
 
-                        // Grain Parameter
+                        // Grain Parameter (Sheet Picker)
+                      //  @State var isGrainPickerExpanded: Bool = false
+
                         VStack {
                             Text("Grain")
                                 .font(.subheadline)
                                 .foregroundColor(AppDesign.Colors.accent2)
-                            Picker("", selection: $clusterSize) {
-                                ForEach(1...50, id: \.self) { value in
-                                    Text("\(value)")
-                                       // .foregroundColor(AppDesign.Colors.accent) // ✅ Override iOS accent color
-                                        // .tag(value)
-                                }
+
+                            Button(action: {
+                                isGrainPickerExpanded.toggle()
+                            }) {
+                                Text("\(clusterSize)")
+                                    .font(.headline)
+                                    .foregroundColor(AppDesign.Colors.accent)
+                                    .padding(12)
+                                    .frame(maxWidth: .infinity)
+                                   // .background(AppDesign.Colors.neutral.opacity(0.2))
+                                    .clipShape(RoundedRectangle(cornerRadius: 8))
                             }
-                            .pickerStyle(MenuPickerStyle())
-                            .labelsHidden()
+                            .sheet(isPresented: $isGrainPickerExpanded) {
+                                VStack(spacing: 20) {
+                                    Text("Select Grain Value")
+                                        .font(.headline)
+                                        .padding()
+
+                                    Picker("Grain", selection: $clusterSize) {
+                                        ForEach(1...200, id: \.self) { value in
+                                            Text("\(value)").tag(value)
+                                        }
+                                    }
+                                    .labelsHidden()
+                                    .pickerStyle(WheelPickerStyle())
+                                    .frame(maxHeight: 200)
+
+                                    Button("Done") {
+                                        isGrainPickerExpanded = false
+                                    }
+                                    .padding()
+                                }
+                                .presentationDetents([.fraction(0.35)])
+                            }
                         }
                         .frame(height: 116)
                         .frame(maxWidth: .infinity)
-                        .background(AppDesign.Colors.neutralB) // ✅ Use centrally managed color for tile backgrounds
+                        .background(AppDesign.Colors.neutralB)
                         .cornerRadius(10)
                         .transaction { $0.animation = nil }
                         
