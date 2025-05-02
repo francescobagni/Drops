@@ -14,20 +14,22 @@ struct ArcProgressInImage: View {
     private func topPadding(for rect: CGRect) -> CGFloat {
         let aspectRatio = rect.width / rect.height
         switch aspectRatio {
-       /* // REAL DEIVCE IPHONE SE 2020
+        // REAL DEIVCE IPHONE SE 2020
         case 1.7...1.9: return 144  // landscape 16:9
         case 1.3...1.6: return 114  // landscape 4:3 tested
         case 0.9...1.1: return 144  // square tested
         case 0.7...0.89: return 94 // portrait 4:3 tested
         case 0.5...0.69: return 84 // portrait 16:9 tested
-        default: return 94 */
-            // REAL DEIVCE IPHONE 16
+        default: return 94
+            
+            
+       /*     // REAL DEIVCE IPHONE 16
             case 1.7...1.9: return 144  // landscape 16:9
             case 1.3...1.6: return 154  // landscape 4:3 tested
             case 0.9...1.1: return 144  // square
             case 0.7...0.89: return 134 // portrait 4:3 tested
             case 0.5...0.69: return 84 // portrait 16:9 tested
-            default: return 94
+            default: return 94 */
         }
     }
 
