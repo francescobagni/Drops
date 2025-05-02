@@ -88,6 +88,7 @@ struct CustomSheetContent: View {
     @Binding var layers: Int
     @Binding var framedExport: Bool // New state variable for Framed Export
     @Binding var invertColor: Bool // Added binding for invertColor
+    @Binding var includeDebugInfo: Bool
     
     @State private var isGrainPickerExpanded: Bool = false
     
@@ -308,6 +309,18 @@ struct CustomSheetContent: View {
                         .background(AppDesign.Colors.neutralB) // ✅ Matches other parameter tiles
                         .cornerRadius(10)
                         .transaction { $0.animation = nil }
+                        
+                        // Include Debug Info
+                        Toggle(isOn: $includeDebugInfo) {
+                            Text("Img Info")
+                                .font(.subheadline)
+                                .foregroundColor(AppDesign.Colors.accent2)
+                        }
+                       // .frame(height: 116)
+                      //  .toggleStyle(SwitchToggleStyle(tint: AppDesign.Colors.accent2))
+                        .padding()
+                        .background(AppDesign.Colors.neutralB)
+                        .cornerRadius(10)
 
                     }
                     .padding(.horizontal)
