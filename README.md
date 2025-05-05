@@ -48,10 +48,23 @@ This repo is not optimized for production use. The goal wasn’t to ship but to 
 
 ## Screenshots & Output Samples
 
-![Drops screenshot](https://github.com/francescobagni/Drops/blob/main/Assets/Drops_Cover.jpeg?raw=true)
-![Output a](https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output1.jpeg?raw=true)
-![Output b](https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output2.jpeg?raw=true)
-![Output c](https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output3.jpeg?raw=true)
+<p align="center">
+  <a href="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_Cover.jpeg?raw=true">
+    <img src="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_Cover.jpeg?raw=true" width="750" />
+  </a>
+</p>>
+<p></<p>
+<p align="center">
+  <a href="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output1.jpeg?raw=true">
+    <img src="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output1.jpeg?raw=true" width="250" />
+  </a>
+  <a href="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output2.jpeg?raw=true">
+    <img src="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output2.jpeg?raw=true" width="250" />
+  </a>
+  <a href="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output3.jpeg?raw=true">
+    <img src="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output3.jpeg?raw=true" width="250" />
+  </a>
+</p>
 
 
 
