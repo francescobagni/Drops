@@ -17,21 +17,7 @@ class Manager {
         return (posterizedImage, posterizedImage)
     }
     
-    func shareImage(
-        _ image: UIImage,
-        framedExport: Bool,
-        dotColor: UIColor,
-        useGrayscale: Bool,
-        invertColor: Bool,
-        includeDebugInfo: Bool,
-        gamma: CGFloat,
-        dotSizeFactor: CGFloat,
-        intensityAcceleration: CGFloat,
-        layers: Int,
-        clusterSize: Int,
-        dismissSheet: @escaping () -> Void,
-        restoreSheet: @escaping () -> Void
-    ) {
+    func shareImage(_ image: UIImage, framedExport: Bool, dotColor: UIColor, useGrayscale: Bool, invertColor: Bool, dismissSheet: @escaping () -> Void, restoreSheet: @escaping () -> Void) {
             DispatchQueue.main.async {
                 dismissSheet() // ✅ First, dismiss the SwiftUI Sheet
 
@@ -46,7 +32,7 @@ class Manager {
                     let usedDotColor = (invertColor && useGrayscale)
                         ? UIColor.white
                         : dotColor
-                    var finalImage = framedExport
+                    let finalImage = framedExport
                         ? image.withPrintFrame(
                               top: padding,
                               left: padding,
@@ -55,21 +41,6 @@ class Manager {
                               backgroundColor: backgroundColor
                           )
                         : image.addBackground(color: Color(backgroundColor))
-                    
-                    
-                    // Debug Info rendering
-                    if includeDebugInfo {
-                        let debugText = """
-                        Max Size: \(Int(image.size.width))
-                        Cluster Size: \(clusterSize)
-                        Shadow: \(gamma)
-                        Drop Size: \(dotSizeFactor)
-                        Contrast: \(intensityAcceleration)
-                        """
-                        finalImage = finalImage.overlayedWithText(debugText)
-                    }
-                    
-                    //   Layers: \(layers)\(framedExport ? "\nPrint Frame: On" : "")
                     
                     self.activityViewController = UIActivityViewController(activityItems: [finalImage], applicationActivities: nil) // ✅ Store reference
 
@@ -90,51 +61,9 @@ class Manager {
                     } else {
                         print("❌ Error: Unable to find rootViewController to present Share Sheet.")
                     }
-                    
                 }
             }
         }
     }
-
-extension UIImage {
-    func overlayedWithText(_ text: String) -> UIImage {
-        let font = UIFont.systemFont(ofSize: 48, weight: .semibold)
-        let padding: CGFloat = 8
-
-        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
-        self.draw(at: .zero)
-
-        let maxTextWidth: CGFloat = 400
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .right
-
-        let attributes: [NSAttributedString.Key: Any] = [
-            .font: font,
-            .paragraphStyle: paragraphStyle
-        ]
-
-        let boundingRect = NSString(string: text).boundingRect(
-            with: CGSize(width: maxTextWidth, height: .greatestFiniteMagnitude),
-            options: [.usesLineFragmentOrigin, .usesFontLeading],
-            attributes: attributes,
-            context: nil
-        )
-
-        let textRect = CGRect(
-            x: self.size.width - maxTextWidth - padding,
-            y: self.size.height - boundingRect.height - padding,
-            width: maxTextWidth,
-            height: boundingRect.height
-        )
-
-        let backgroundPath = UIBezierPath(roundedRect: textRect.insetBy(dx: -12, dy: -12), cornerRadius: 6)
-        UIColor.white.withAlphaComponent(0.8).setFill()
-        backgroundPath.fill()
-
-        text.draw(in: textRect, withAttributes: attributes)
-        let result = UIGraphicsGetImageFromCurrentImageContext() ?? self
-        UIGraphicsEndImageContext()
-        return result
-    }
-}
     
+

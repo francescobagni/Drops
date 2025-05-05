@@ -48,9 +48,6 @@ struct AppUI: View {
     @State private var lastAppliedFramedExport: Bool = false
     @State private var lastAppliedInvertColor: Bool = false
     
-    @State private var includeDebugInfo: Bool = false
-    @State private var lastAppliedIncludeDebugInfo: Bool = false
-    
     @State private var useMulticolor: Bool = true
     @State private var framedExport: Bool = false
     @State private var invertColor: Bool = false
@@ -373,29 +370,15 @@ struct AppUI: View {
                         },
                         onShare: {
                             if let image = viewModel.rasterizedImage {
-                                manager.shareImage(
-                                    image,
-                                    framedExport: framedExport,
-                                    dotColor: UIColor(dotColor),
-                                    useGrayscale: useGrayscale,
-                                    invertColor: invertColor,
-                                    includeDebugInfo: includeDebugInfo,
-                                    gamma: gamma,
-                                    dotSizeFactor: dotSizeFactor,
-                                    intensityAcceleration: intensityAcceleration,
-                                    layers: layers,
-                                    clusterSize: clusterSize,
-                                    dismissSheet: {
-                                        isSheetPresented = false
-                                        if !isZoomed {
-                                            selectedSlider = nil
-                                        }
-                                    },
-                                    restoreSheet: {
-                                        isSheetPresented = true
-                                        sheetDetent = .height(smallDetent)
+                                manager.shareImage(image, framedExport: framedExport, dotColor: UIColor(dotColor), useGrayscale: useGrayscale, invertColor: invertColor, dismissSheet: {
+                                    isSheetPresented = false
+                                    if !isZoomed {
+                                        selectedSlider = nil
                                     }
-                                )
+                                }, restoreSheet: {
+                                    isSheetPresented = true
+                                    sheetDetent = .height(smallDetent)
+                                })
                             }
                         },
                         progressMessage: $progressMessage
@@ -473,8 +456,7 @@ struct AppUI: View {
                             gamma: $gamma,
                             layers: $layers,
                             framedExport: $framedExport, // ✅ Fix: Added missing parameter
-                            invertColor: $invertColor,
-                            includeDebugInfo: $includeDebugInfo
+                            invertColor: $invertColor
                         )
                     }
                 }
@@ -572,7 +554,6 @@ struct AppUI: View {
                     lastAppliedGamma = gamma
                     lastAppliedUseMulticolor = useMulticolor
                     lastAppliedInvertColor = invertColor
-                    lastAppliedIncludeDebugInfo = includeDebugInfo
                 }
                 let processingEndTime = CFAbsoluteTimeGetCurrent()
                 let duration = processingEndTime - processingStartTime
@@ -655,7 +636,6 @@ struct AppUI: View {
                          useMulticolor != lastAppliedUseMulticolor ||
                         // framedExport != lastAppliedFramedExport ||
                          invertColor != lastAppliedInvertColor
-                        includeDebugInfo != lastAppliedIncludeDebugInfo
 
         
         return hasChanged
