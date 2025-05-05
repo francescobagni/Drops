@@ -52,17 +52,17 @@ This repo is not optimized for production use. The goal wasn’t to ship but to 
   <a href="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_Cover.jpeg?raw=true">
     <img src="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_Cover.jpeg?raw=true" width="750" />
   </a>
-</p>>
-<p></<p>
-<p align="center">
+</p>
+
+<p align="center" style="max-width: 750px; margin: 0 auto;">
   <a href="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output1.jpeg?raw=true">
-    <img src="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output1.jpeg?raw=true" width="250" />
+    <img src="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output1.jpeg?raw=true" style="max-height: 240px; max-width: 240px; vertical-align: top; margin: 4px;" />
   </a>
   <a href="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output2.jpeg?raw=true">
-    <img src="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output2.jpeg?raw=true" width="250" />
+    <img src="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output2.jpeg?raw=true" style="max-height: 240px; max-width: 240px; vertical-align: top; margin: 4px;" />
   </a>
   <a href="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output3.jpeg?raw=true">
-    <img src="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output3.jpeg?raw=true" width="250" />
+    <img src="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_output3.jpeg?raw=true" style="max-height: 240px; max-width: 240px; vertical-align: top; margin: 4px;" />
   </a>
 </p>
 
