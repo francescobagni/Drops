@@ -1,4 +1,4 @@
-# Drops – A Design Exploration in AI-Enhanced Prototyping
+# Drops | Designing and Prototyping with AI
 
 **Drops** is a small, functional iOS image processing app, built as a hands-on exploration into how AI can support early-stage product and interaction design workflows.
 
