@@ -48,10 +48,10 @@ This repo is not optimized for production use. The goal wasn’t to ship but to 
 
 ## Screenshots & Output Samples
 
-![Drops screenshot](Drops/blob/main/Assets/Drops_Cover.jpeg)
-![Output a](Drops/blob/main/Assets/Drops_output1.jpeg)
-![Output a](Drops/blob/main/Assets/Drops_output2.jpeg)
-![Output a](Drops/blob/main/Assets/Drops_output3.jpeg)
+![Drops screenshot](https://github.com/francescobagni/Drops/blob/main/Drops/blob/main/Assets/Drops_Cover.jpeg)
+![Output a](https://github.com/francescobagni/Drops/blob/main/Drops/blob/main/Assets/Drops_output1.jpeg)
+![Output a](https://github.com/francescobagni/Drops/blob/main/Drops/blob/main/Assets/Drops_output2.jpeg)
+![Output a](https://github.com/francescobagni/Drops/blob/main/Drops/blob/main/Assets/Drops_output3.jpeg)
 
 
 
