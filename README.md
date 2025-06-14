@@ -49,10 +49,11 @@ This repo is not optimized for production use. The goal wasn’t to ship but to 
 ## Screenshots & Output Samples
 
 <p align="center">
-  <a href="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_Cover.jpeg?raw=true">
-    <img src="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_Cover.jpeg?raw=true" width="750" />
+  <a href="https://res.cloudinary.com/dhuiu2etw/video/upload/f_mp4/DesignWithAI_pdfcqm.mp4">
+    <img src="https://github.com/francescobagni/Drops/blob/main/Assets/Drops_Cover_PLAY.jpeg?raw=true" width="750" />
   </a>
 </p>
+
 
 <br>
 
